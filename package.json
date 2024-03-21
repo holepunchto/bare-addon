@@ -3,7 +3,10 @@
   "name": "bare-addon",
   "version": "1.0.0",
   "description": "Example Bare addon",
-  "exports": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package": "./package.json"
+  },
   "files": [
     "index.js",
     "binding.c",
