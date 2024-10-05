@@ -66,4 +66,4 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.platform }}-${{ matrix.arch }}${{ matrix.tags }}
-        path: prebuilds/*
+        path: prebuilds/${{ matrix.platform }}-${{ matrix.arch }}${{ matrix.tags }}
