@@ -30,6 +30,7 @@
   "homepage": "https://github.com/holepunchto/bare-addon#readme",
   "devDependencies": {
     "brittle": "^3.4.0",
+    "cmake-bare": "^1.1.2",
     "standard": "^17.0.0"
   }
 }
