@@ -10,7 +10,7 @@ Template repository for creating Bare native addons. For information on how to u
 npm i -g bare-make
 ```
 
-Next, generate the build system for compiling the bindings, optionally passing `--debug` to enable debug symbols and assertions:
+Next, generate the build system for compiling the bindings, optionally setting the `--debug` flag to enable debug symbols and assertions:
 
 ```console
 bare-make generate [--debug]
