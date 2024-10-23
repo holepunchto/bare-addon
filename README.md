@@ -10,10 +10,10 @@ Template repository for creating Bare native addons. For information on how to u
 npm i -g bare-make
 ```
 
-Next, generate the build system for compiling the bindings:
+Next, generate the build system for compiling the bindings, optionally passing `--debug` to enable debug symbols and assertions:
 
 ```console
-bare-make generate
+bare-make generate [--debug]
 ```
 
 This only has to be run once per repository checkout. When updating `bare-make` or your compiler toolchain it might also be necessary to regenerate the build system. To do so, run the command again with the `--no-cache` flag set to disregard the existing build system cache:
