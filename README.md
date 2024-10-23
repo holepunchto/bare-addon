@@ -19,7 +19,7 @@ bare-make generate [--debug]
 This only has to be run once per repository checkout. When updating `bare-make` or your compiler toolchain it might also be necessary to regenerate the build system. To do so, run the command again with the `--no-cache` flag set to disregard the existing build system cache:
 
 ```console
-bare-make generate --no-cache
+bare-make generate [--debug] --no-cache
 ```
 
 With a build system generated, the bindings can be compiled:
