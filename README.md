@@ -50,6 +50,12 @@ To publish an addon, make sure to first compile bindings for the targets you wis
 gh workflow run prebuild
 ```
 
+To watch the status of the workflow run until it finishes, do:
+
+```console
+gh run watch
+```
+
 When finished, the resulting prebuilds can be downloaded to the `prebuilds/` directory by doing:
 
 ```console
