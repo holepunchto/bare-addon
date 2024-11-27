@@ -4,7 +4,7 @@
 #include <utf.h>
 
 static js_value_t *
-bare_addon_hello (js_env_t *env, js_callback_info_t *info) {
+bare_addon_hello(js_env_t *env, js_callback_info_t *info) {
   int err;
 
   js_value_t *result;
@@ -15,7 +15,7 @@ bare_addon_hello (js_env_t *env, js_callback_info_t *info) {
 }
 
 static js_value_t *
-bare_addon_exports (js_env_t *env, js_value_t *exports) {
+bare_addon_exports(js_env_t *env, js_value_t *exports) {
   int err;
 
 #define V(name, fn) \
