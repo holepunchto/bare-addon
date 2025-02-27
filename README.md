@@ -48,7 +48,6 @@ To publish an addon, make sure to first compile bindings for the targets you wis
 
 ```console
 npm version <increment>
-
 git push
 git push --tags
 ```
