@@ -44,7 +44,7 @@ Prior to publishing the module, make sure that no links exist within the `prebui
 
 ## Publishing
 
-To publish an addon, make sure to first compile bindings for the targets you wish to support. The prebuild workflow defined in [`.github/workflows/prebuild.yml`](.github/workflows/prebuild.yml) automates this process for all tier 1 targets supported by Bare (<https://github.com/holepunchto/bare#platform-support>). The whole process can be handily orchestrated by the [GitHub CLI](https://cli.github.com). As the package version is part of the compiled bindings, make sure to first commit and push a version update:
+To publish an addon, make sure to first compile bindings for the targets you wish to support. The prebuild workflow defined in [`.github/workflows/prebuild.yml`](.github/workflows/prebuild.yml) automates this process for all [tier 1 targets](https://github.com/holepunchto/bare#platform-support) supported by Bare. The whole process can be handily orchestrated by the [GitHub CLI](https://cli.github.com). As the package version is part of the compiled bindings, make sure to first commit and push a version update:
 
 ```console
 npm version <increment>
