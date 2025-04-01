@@ -70,6 +70,36 @@ When finished, the resulting prebuilds can be downloaded to the `prebuilds/` dir
 gh run download --name prebuilds --dir prebuilds
 ```
 
+## Dependencies
+
+Addons are rarely self-contained and most often need to pull in external native libraries. For this, <https://github.com/holepunchto/cmake-fetch> should be used. Start by installing the package as a development dependency:
+
+```console
+npm i -D cmake-fetch
+```
+
+Next, import the package in the [`CMakeLists.txt`](CMakeLists.txt) build definition:
+
+```cmake
+find_package(cmake-fetch REQUIRED PATHS node_modules/cmake-fetch)
+```
+
+This will make the `fetch_package()` function available. To fetch an external native library, such as <https://github.com/holepunchto/liburl>, add the following line _after_ the `project()` declaration in the build definition:
+
+```cmake
+fetch_package("github:holepunchto/liburl")
+```
+
+Finally, link the imported native library to the addon:
+
+```cmake
+target_link_libraries(
+  ${bare_addon}
+  PUBLIC
+    url
+)
+```
+
 ## License
 
 Apache-2.0
