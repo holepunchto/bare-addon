@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "description": "Example Bare addon",
   "exports": {
-    ".": "./index.js",
-    "./package": "./package.json"
+    "./package": "./package.json",
+    ".": "./index.js"
   },
   "files": [
     "index.js",
