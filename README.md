@@ -70,6 +70,9 @@ When finished, the resulting prebuilds can be downloaded to the `prebuilds/` dir
 gh run download --name prebuilds --dir prebuilds
 ```
 
+> [!IMPORTANT]
+> You still need to manually run `npm pub` to publish the package to npm.
+
 ## Dependencies
 
 Addons are rarely self-contained and most often need to pull in external native libraries. For this, <https://github.com/holepunchto/cmake-fetch> should be used. Start by installing the package as a development dependency:
