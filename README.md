@@ -70,7 +70,8 @@ When finished, the resulting prebuilds can be downloaded to the `prebuilds/` dir
 gh run download --name prebuilds --dir prebuilds
 ```
 
-> Note: You still need to manually run `npm pub` to publish the package on NPM.
+> [!IMPORTANT]
+> You still need to manually run `npm pub` to publish the package to npm.
 
 ## Dependencies
 
