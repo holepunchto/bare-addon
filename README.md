@@ -103,6 +103,20 @@ target_link_libraries(
 )
 ```
 
+## Troubleshooting
+
+### Local changes not being reflected after installation
+
+The `bare` CLI statically links built-in native addons using `link_bare_module` at: [`bare/bin/CMakeLists.txt`](https://github.com/holepunchto/bare/blob/main/bin/CMakeLists.txt), if you are working on one of those, `bare` may be loading a cached version of it.
+
+To check the current cache state, execute:
+
+```sh
+bare --print 'Bare.Addon.cache'
+```
+
+To bypass this issue during development, manually bump the `version` field in the `package.json` to invalidate the cache.
+
 ## License
 
 Apache-2.0
