@@ -57,8 +57,8 @@ jobs:
     steps:
       - run: apt update && apt install -y git clang lld
         if: ${{ matrix.platform == 'linux' }}
-      - uses: holepunchto/actions/bare-base@native-actions
-      - uses: holepunchto/actions/compile-prebuilds@native-actions
+      - uses: holepunchto/actions/bare-base@v1
+      - uses: holepunchto/actions/compile-prebuilds@v1
         with:
           platform: ${{ matrix.platform }}
           arch: ${{ matrix.arch }}
@@ -69,4 +69,4 @@ jobs:
     runs-on: ubuntu-latest
     needs: prebuild
     steps:
-      - uses: holepunchto/actions/merge-prebuilds@native-actions
+      - uses: holepunchto/actions/merge-prebuilds@v1
