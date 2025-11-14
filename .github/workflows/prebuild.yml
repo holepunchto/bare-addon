@@ -57,7 +57,7 @@ jobs:
     steps:
       - run: apt update && apt install -y git clang lld
         if: ${{ matrix.platform == 'linux' }}
-      - uses: holepunchto/actions/node-base@current
+      - uses: holepunchto/actions/bare-base@native-actions
       - uses: holepunchto/actions/compile-prebuilds@native-actions
         with:
           platform: ${{ matrix.platform }}

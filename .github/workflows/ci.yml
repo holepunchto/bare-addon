@@ -21,11 +21,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     name: Test / ${{ matrix.platform }}-${{ matrix.arch }}
     steps:
-      - uses: holepunchto/actions/node-base@current
+      - uses: holepunchto/actions/bare-base@native-actions
       - uses: holepunchto/actions/compile-prebuilds@native-actions
         with:
           platform: ${{ matrix.platform }}
           arch: ${{ matrix.arch }}
           flags: --debug
-      - run: npm install -g bare-runtime
       - run: npm test
