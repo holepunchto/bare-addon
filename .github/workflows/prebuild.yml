@@ -63,11 +63,8 @@ jobs:
           platform: ${{ matrix.platform }}
           arch: ${{ matrix.arch }}
           flags: ${{ matrix.flags }}
-      - uses: holepunchto/actions/upload-prebuilds@native-actions
-        with:
-          platform: ${{ matrix.platform }}
-          arch: ${{ matrix.arch }}
           tags: ${{ matrix.tags}}
+          upload: true
   merge:
     runs-on: ubuntu-latest
     needs: prebuild
