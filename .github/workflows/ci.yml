@@ -7,6 +7,7 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    name: Lint
     steps:
       - uses: holepunchto/actions/node-base@current
       - run: npm run lint
@@ -24,7 +25,7 @@ jobs:
             platform: win32
             arch: x64
     runs-on: ${{ matrix.os }}
-    name: ${{ matrix.platform }}-${{ matrix.arch }}
+    name: Test / ${{ matrix.platform }}-${{ matrix.arch }}
     steps:
       - uses: holepunchto/actions/bare-base@native-actions
       - uses: holepunchto/actions/compile-prebuilds@native-actions
