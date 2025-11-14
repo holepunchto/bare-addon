@@ -1,0 +1,31 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  test:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            platform: linux
+            arch: x64
+          - os: macos-latest
+            platform: darwin
+            arch: arm64
+          - os: windows-latest
+            platform: win32
+            arch: x64
+    runs-on: ${{ matrix.os }}
+    name: Test / ${{ matrix.platform }}-${{ matrix.arch }}
+    steps:
+      - uses: holepunchto/actions/node-base@current
+      - uses: holepunchto/actions/compile-prebuilds@native-actions
+        with:
+          platform: ${{ matrix.platform }}
+          arch: ${{ matrix.arch }}
+          flags: --debug
+      - run: npm install -g bare-runtime
+      - run: npm test
