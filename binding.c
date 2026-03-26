@@ -8,7 +8,7 @@ bare_addon_hello(js_env_t *env, js_callback_info_t *info) {
   int err;
 
   js_value_t *result;
-  err = js_create_string_utf8(env, (utf8_t *) "Hello addon", -1, &result);
+  err = js_create_string_utf8(env, (utf8_t *) "Hello from C", -1, &result);
   if (err < 0) return NULL;
 
   return result;
