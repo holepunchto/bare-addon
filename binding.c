@@ -1,6 +1,7 @@
 #include <assert.h>
 #include <bare.h>
 #include <js.h>
+#include <stdio.h>
 #include <utf.h>
 
 static js_value_t *
@@ -10,6 +11,12 @@ bare_addon_create_double(js_env_t *env, js_callback_info_t *info) {
   js_value_t *result;
   err = js_create_double(env, 3.14, &result);
   if (err < 0) return NULL;
+
+  double value;
+  err = js_get_value_double(env, result, &value);
+  if (err < 0) return NULL;
+
+  printf("value=%f\n", value);
 
   return result;
 }
@@ -21,6 +28,12 @@ bare_addon_create_int64(js_env_t *env, js_callback_info_t *info) {
   js_value_t *result;
   err = js_create_int64(env, 12345, &result);
   if (err < 0) return NULL;
+
+  int64_t value;
+  err = js_get_value_int64(env, result, &value);
+  if (err < 0) return NULL;
+
+  printf("value=%lld\n", value);
 
   return result;
 }
