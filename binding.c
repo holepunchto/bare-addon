@@ -39,6 +39,23 @@ bare_addon_create_int64(js_env_t *env, js_callback_info_t *info) {
 }
 
 static js_value_t *
+bare_addon_create_int32(js_env_t *env, js_callback_info_t *info) {
+  int err;
+
+  js_value_t *result;
+  err = js_create_int32(env, 12345, &result);
+  if (err < 0) return NULL;
+
+  int32_t value;
+  err = js_get_value_int32(env, result, &value);
+  if (err < 0) return NULL;
+
+  printf("value=%d\n", value);
+
+  return result;
+}
+
+static js_value_t *
 bare_addon_hello(js_env_t *env, js_callback_info_t *info) {
   int err;
 
@@ -64,6 +81,7 @@ bare_addon_exports(js_env_t *env, js_value_t *exports) {
 
   V("createDouble", bare_addon_create_double)
   V("createInt64", bare_addon_create_int64)
+  V("createInt32", bare_addon_create_int32)
   V("hello", bare_addon_hello)
 #undef V
 

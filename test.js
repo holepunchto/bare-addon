@@ -11,6 +11,11 @@ test('createInt64', (t) => {
   t.is(addon.createInt64(), 12345)
 })
 
+test('createInt32', (t) => {
+  t.is(addon.createInt32(), 12345)
+  t.is(addon.createInt32(), 12345)
+})
+
 test('hello', (t) => {
   t.is(addon.hello(), 'Hello from C')
 })
