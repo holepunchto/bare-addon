@@ -8,7 +8,7 @@ static js_value_t *
 bare_addon_create_double(js_env_t *env, js_callback_info_t *info) {
   int err;
 
-  js_value_t *result;
+  js_value_t *result = NULL;
   err = js_create_double(env, 3.14, &result);
   if (err < 0) return NULL;
 
