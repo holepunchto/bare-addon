@@ -6,6 +6,11 @@ test('createDouble', (t) => {
   t.is(addon.createDouble(), 3.14)
 })
 
+test('createInt64', (t) => {
+  t.is(addon.createInt64(), 12345)
+  t.is(addon.createInt64(), 12345)
+})
+
 test('hello', (t) => {
   t.is(addon.hello(), 'Hello from C')
 })
