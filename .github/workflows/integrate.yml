@@ -32,7 +32,8 @@ jobs:
     name: Test / ${{ matrix.platform }}-${{ matrix.arch }}
     steps:
       - uses: holepunchto/actions/bare-base@v1
-      - uses: holepunchto/actions/setup-llvm@v1
+      - run: choco upgrade llvm
+        if: ${{ matrix.platform == 'win32' }}
       - uses: holepunchto/actions/compile-prebuilds@v1
         with:
           platform: ${{ matrix.platform }}
